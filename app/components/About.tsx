@@ -1,4 +1,3 @@
-import { IconContext } from "react-icons";
 import { VscChevronRight } from "react-icons/vsc";
 import Img from "next/image";
 const About = () => {
@@ -15,8 +14,8 @@ const About = () => {
               Hello! My name is Bryan, and I enjoy the creative and systematic
               process of bringing software to life. My interested in web
               development started when my friend introduced a Udemy course to
-              me. It was a light-bulb moment for me that made me realize that I
-              love building and creating.
+              me. It was a light-bulb moment that made me realize that I
+              love to build and create.
             </div>
             <div>
               Today, I have the priveledge of building and maintaining web
@@ -33,7 +32,7 @@ const About = () => {
               >
                 Medium
               </a>{" "}
-              to provide resources that I wish I had to other self-taught
+              to provide resources that I wish I had for other self-taught
               software engineers.
             </div>
             <div>
