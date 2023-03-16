@@ -1,4 +1,6 @@
-const WorkHistory = [
+import { WorkInfo } from "@/app/@types/interfaces";
+
+const WorkHistory: WorkInfo[] = [
   {
     companyName: "The Ridge",
     companyLink: "https://www.ridge.com",

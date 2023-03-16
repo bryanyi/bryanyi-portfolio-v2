@@ -2,7 +2,7 @@ const Introduction = () => {
   return (
     <>
       <section className="flex flex-col h-screen text-left pt-28 gap-y-5 mt-40">
-        <h1 className="text-xl font-spacemono text-accent pl-3">
+        <h1 className="text-lg font-spacemono text-accent font-thin pl-3">
           Hi, my name is
         </h1>
 
@@ -11,9 +11,18 @@ const Introduction = () => {
           I build things for the web.
         </h2>
 
-        <p className="w-5/6 text-secondary text-2xl">
-          I'm a software engineer based in Southern California with a passion for
-          building extraordinary applications and tinkering with technology.
+        <p className="w-5/6 text-secondary text-lg">
+          I'm a self-taught software engineer with a passion for building
+          extraordinary applications and tinkering with technology. Currently,
+          I'm focused on developing customer-centric web apps at{" "}
+          <a className="fun-underline" href="https://www.ridge.com">
+            The Ridge
+          </a>{" "}
+          and{" "}
+          <a className="fun-underline" href="https://www.medium.com/@bryanyi">
+            writing blogs
+          </a>{" "}
+          to give other self-taught engineers guidance that I wish I had.
         </p>
 
         <div className="flex gap-x-9 text-lg mt-2">
