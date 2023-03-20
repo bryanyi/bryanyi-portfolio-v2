@@ -17,6 +17,24 @@ const WorkHistory: WorkInfo[] = [
     timeEmployed: "July 2020 - Present",
     description: ["bullet point 1", "bullet point 2", "bullet point 3"],
   },
+
+  {
+    id: 3,
+    companyName: "company 3",
+    companyLink: "https://www.ridge.com2",
+    position: "Position company 3",
+    timeEmployed: "July 2020 - Present",
+    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
+  },
+
+  {
+    id: 4,
+    companyName: "company 4",
+    companyLink: "https://www.ridge.com4",
+    position: "Position company 3",
+    timeEmployed: "July 2020 - Present",
+    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
+  },
 ];
 
 export default WorkHistory;

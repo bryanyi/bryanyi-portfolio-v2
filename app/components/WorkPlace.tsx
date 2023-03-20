@@ -14,7 +14,7 @@ const WorkPlace: React.FC<WorkProps> = ({
   timeEmployed,
   description,
 }) => {
-  const workSectionBaseStyles = `transition-all duration-500`;
+  const workSectionBaseStyles = `transition-all duration-100`;
   const displayWorkInfo = `${workSectionBaseStyles} block`;
   const hideWorkInfo = `${workSectionBaseStyles} hidden`;
 
@@ -24,13 +24,13 @@ const WorkPlace: React.FC<WorkProps> = ({
         className={tabPosition == id ? displayWorkInfo : hideWorkInfo}
         data-workplace-tab={id}
       >
-        <h2 className="text-2xl text-primary font-fontSans font-medium mb-1">
+        <h2 className="text-lg text-primary font-fontSans font-medium mb-1">
           {position}{" "}
           <a className="fun-underline text-accent" href={companyLink}>
             @ {companyName}
           </a>
         </h2>
-        <p className="text-secondary font-spacemono mb-5">{timeEmployed}</p>
+        <p className="text-sm text-secondary font-spacemono mb-5">{timeEmployed}</p>
         {description.map((desc) => {
           return (
             <ul>

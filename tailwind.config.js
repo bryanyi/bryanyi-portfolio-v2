@@ -9,6 +9,12 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    "translate-y-0",
+    "translate-y-[42px]",
+    "translate-y-[84px]",
+    "translate-y-[126px]",
+  ],
   theme: {
     extend: {
       colors: {
@@ -21,6 +27,7 @@ module.exports = {
         nav: "var(--Nav)",
         project: "var(--project)",
         projectDesc: "var(--project-desc)",
+        silverGrey: "var(--silver-grey)",
       },
       fontFamily: {
         spacemono: ["Space Mono", "monospace"],

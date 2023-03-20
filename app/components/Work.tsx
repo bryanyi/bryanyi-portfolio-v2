@@ -9,7 +9,7 @@ const Work = () => {
   const [highligherPosition, setHighlighterPosition] =
     useState<string>("translate-y-0");
   const tabBaseStyles =
-    "text-left text-xl font-thin h-11 px-5 pb-[2px] border-l-[2px] border-l-secondary transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
+    "text-left text-sm font-thin h-11 px-5 pb-[2px] border-l-[2px] border-l-silverGrey transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
   const unselectedTab = `${tabBaseStyles} text-secondary`;
   const selectedTab = `${tabBaseStyles} text-accent`;
 
@@ -30,13 +30,13 @@ const Work = () => {
       setTabPosition(newTabPosition);
       setHighlighterPosition(`translate-y-[${newHighlighterPosition}]`);
       setWorkplaceTransition("opacity-100");
-    }, 400);
+    }, 200);
   };
 
   return (
     <>
-      <section className="work-section mt-10 max-w-3xl mx-auto">
-        <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-[#233554] after:w-[300px] after:h-[1px] after:ml-8">
+      <section className="work-section mt-10 mb-48 max-w-3xl mx-auto">
+        <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-silverGrey after:w-[300px] after:h-[1px] after:ml-8">
           Where I've Worked
         </h2>
 
@@ -57,11 +57,11 @@ const Work = () => {
               );
             })}
             <div
-              className={`highlight absolute top-0 left-0 z-10 w-[2px] h-11 rounded bg-accent transition-all duration-200 delay-100 transform ${highligherPosition}`}
+              className={`highlight absolute top-0 left-0 z-10 w-[2px] h-11 rounded bg-accent transition-all duration-200  transform ${highligherPosition}`}
             ></div>
           </div>
           <div
-            className={`work-content relative transition-all duration-300 ease-in-out ${workplaceTransition}`}
+            className={`work-content relative transition-all duration-200 ease-in-out ${workplaceTransition}`}
           >
             {workhistory.map((workplace) => {
               return (
