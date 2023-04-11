@@ -1,7 +1,7 @@
 const Introduction = () => {
   return (
     <>
-      <section className="flex flex-col h-screen text-left pt-28 gap-y-5 mt-40">
+      <section id="introduction" className="flex flex-col h-screen text-left pt-28 gap-y-5 mt-40">
         <h1 className="text-lg font-spacemono text-accent font-thin pl-3">
           Hi, my name is
         </h1>

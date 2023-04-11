@@ -1,7 +1,7 @@
 const Nav = () => {
   return (
     <>
-      <header className="flex justify-between h-8 w-full px-9 pt-5 font-spacemono text-lg">
+      <header className="flex justify-between h-8 w-full px-12 pt-11 font-spacemono text-sm">
         <a href="/" className="text-accent text-2xl">
           BY
         </a>

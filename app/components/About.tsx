@@ -3,7 +3,7 @@ import Img from "next/image";
 const About = () => {
   return (
     <>
-      <section className="about-section mb-40">
+      <section id="about" className="about-section mb-40">
         <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-[#233554] after:w-[300px] after:h-[1px] after:ml-8">
           About Me
         </h2>

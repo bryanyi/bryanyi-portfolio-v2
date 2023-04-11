@@ -9,7 +9,7 @@ const Work = () => {
   const [highligherPosition, setHighlighterPosition] =
     useState<string>("translate-y-0");
   const tabBaseStyles =
-    "text-left text-sm font-thin h-11 px-5 pb-[2px] border-l-[2px] border-l-silverGrey transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
+    "w-[135px] text-left text-sm font-thin h-11 px-5 pb-[2px] border-l-[2px] border-l-silverGrey transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
   const unselectedTab = `${tabBaseStyles} text-secondary`;
   const selectedTab = `${tabBaseStyles} text-accent`;
 
@@ -35,7 +35,7 @@ const Work = () => {
 
   return (
     <>
-      <section className="work-section mt-10 mb-48 max-w-3xl mx-auto">
+      <section id="work" className="work-section mt-10 mb-48 max-w-3xl mx-auto">
         <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-silverGrey after:w-[300px] after:h-[1px] after:ml-8">
           Where I've Worked
         </h2>
@@ -66,6 +66,7 @@ const Work = () => {
             {workhistory.map((workplace) => {
               return (
                 <WorkPlace
+                  key={workplace.id}
                   tabPosition={tabPosition}
                   id={workplace.id}
                   companyName={workplace.companyName}

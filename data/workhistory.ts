@@ -7,33 +7,11 @@ const WorkHistory: WorkInfo[] = [
     companyLink: "https://www.ridge.com",
     position: "Web Developer",
     timeEmployed: "July 2021 - Present",
-    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
-  },
-  {
-    id: 2,
-    companyName: "The Ridge2",
-    companyLink: "https://www.ridge.com2",
-    position: "Web Developer",
-    timeEmployed: "July 2020 - Present",
-    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
-  },
-
-  {
-    id: 3,
-    companyName: "company 3",
-    companyLink: "https://www.ridge.com2",
-    position: "Position company 3",
-    timeEmployed: "July 2020 - Present",
-    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
-  },
-
-  {
-    id: 4,
-    companyName: "company 4",
-    companyLink: "https://www.ridge.com4",
-    position: "Position company 3",
-    timeEmployed: "July 2020 - Present",
-    description: ["bullet point 1", "bullet point 2", "bullet point 3"],
+    description: [
+      "Engineered Next.js/Typescript, TailwindCSS, Builder.io, and Netlify to build faster landing pages that can be quickly iterated by the marketing and design teams while maintaining speed performance from over a second to 500ms.",
+      "Developed new workflows to efficiently streamline the integration and iteration of code base and third-party apps used by the marketing team to work with the integration of Webpack.",
+      "Collaborated with designers to improve user interface, user experience, and mobile responsiveness by adjusting SCSS and restructuring HTML/Liquid pages.",
+    ],
   },
 ];
 
