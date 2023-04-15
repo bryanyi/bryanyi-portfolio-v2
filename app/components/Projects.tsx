@@ -9,7 +9,7 @@ const Projects = () => {
           Some Things I've Built
         </h2>
 
-        <div className="projects-section-container">
+        <div className="projects-section-container mt-14 mb-48">
           {projects.map((project) => {
             return (
               <Project
