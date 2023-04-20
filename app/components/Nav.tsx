@@ -1,12 +1,12 @@
 const Nav = () => {
   return (
     <>
-      <header className="flex justify-between h-8 w-full px-12 pt-11 font-spacemono text-sm">
-        <a href="/" className="text-accent text-2xl">
+      <header className="flex justify-between h-full w-full px-6 sm:px-12 pt-10 font-spacemono text-sm">
+        <a href="/" className="text-accent text-2xl flex justify-center items-center">
           BY
         </a>
 
-        <ul className="flex justify-around list-none gap-x-14 font-thin">
+        <ul className="hidden md:flex justify-around items-center list-none gap-x-14 font-thin">
           <li className="list-hover">
             <a href="#about">About</a>
           </li>
@@ -25,6 +25,10 @@ const Nav = () => {
             </a>
           </li>
         </ul>
+
+        <div className="menu-hamburger cursor-pointer flex justify-center items-center md:hidden">
+          <div className="hamburger_line"></div>
+        </div>
       </header>
     </>
   );
