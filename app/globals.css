@@ -16,6 +16,37 @@
   --silver-grey: #233554;
 }
 
+@layer components {
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: var(--secondary-color);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+    border: 1px solid #597bad;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+  }
+  @media screen(md) {
+    .scrollbar::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+  }
+}
+
+.section-header-line {
+  @apply after:content-[''] after:block after:relative after:bg-[#233554] after:h-[1px] after:ml-8 after:w-[40vw] lg:after:w-[300px];
+}
+
 .squishy-button {
   @apply relative cursor-pointer text-primary py-[.9rem] px-[20px] border border-accent rounded-md 
   bg-transparent text-base transition-all duration-150 shadow-squish top-0 left-0 hover:shadow-squished hover:top-[3px] hover:left-[3px];
@@ -35,8 +66,8 @@
 }
 
 .portfolio-image {
-  @apply relative after:transition-all after:duration-500 after:ease-in-out after:border-2 after:absolute after:content-[""] after:block after:w-full 
-  after:h-full after:top-7 after:left-7 after:border-accent after:-z-10 after:hover:top-4 after:hover:left-4;
+  @apply relative w-[45vw] sm:w-[39vw] after:top-3 after:left-3 md:w-fit md:h-fit after:transition-all after:duration-500 after:ease-in-out after:border-2 after:absolute after:content-[""] after:block after:w-full 
+  after:h-full md:after:top-7 md:after:left-7 after:border-accent after:-z-10 after:hover:top-4 after:hover:left-4;
 }
 
 .about-technologies {

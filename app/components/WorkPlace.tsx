@@ -32,7 +32,7 @@ const WorkPlace: React.FC<WorkProps> = ({
       <p className="text-sm text-secondary font-spacemono mb-5">
         {timeEmployed}
       </p>
-      <ul>
+      <ul className="text-sm lg:text-base">
         {description.map((desc, idx) => {
           return (
             <li key={idx} className="flex items-start gap-x-1 text-accent mb-2">

@@ -14,6 +14,8 @@ module.exports = {
     "translate-y-[42px]",
     "translate-y-[84px]",
     "translate-y-[126px]",
+    "translate-x-[134px]",
+    "translate-x-[268px]",
   ],
   theme: {
     extend: {

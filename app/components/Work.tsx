@@ -4,31 +4,25 @@ import workhistory from "../../data/workhistory";
 import WorkPlace from "./WorkPlace";
 const Work = () => {
   const [tabPosition, setTabPosition] = useState<number>(1);
-  const [workplaceTransition, setWorkplaceTransition] =
-    useState<string>("opacity-100");
-  const [highligherPosition, setHighlighterPosition] =
-    useState<string>("translate-y-0");
+  const [workplaceTransition, setWorkplaceTransition] = useState<string>("opacity-100");
+  const [highligherPosition, setHighlighterPosition] = useState<string>("translate-y-0");
   const tabBaseStyles =
-    "w-[135px] text-left text-sm font-thin h-11 px-5 pb-[2px] border-l-[2px] border-l-silverGrey transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
+    "min-w-[135px] w-[135px] text-left text-sm font-thin h-11 px-5 pb-[2px] border-b-[2px] border-b-silverGrey md:border-b-[0px] md:border-l-[2px] md:border-l-silverGrey transition-all duration-150 ease-in-out font-spacemono hover:bg-secondaryBg hover:text-accent";
   const unselectedTab = `${tabBaseStyles} text-secondary`;
   const selectedTab = `${tabBaseStyles} text-accent`;
 
   const handleChangeTabs = (e: any): void => {
     let newTabPosition = e.target.dataset.tab;
-    let newHighlighterPosition = `${String((newTabPosition - 1) * 42)}px`;
-
-    console.log("NEW TAB POSITION: ", newTabPosition, typeof newTabPosition);
-    console.log(
-      "NEW HIGHLIGHTER POSITION: ",
-      newHighlighterPosition,
-      typeof newHighlighterPosition
-    );
+    let newHighlighterPosition: string = "";
+    let setNewHighligterPositionString: string = "";
+    newHighlighterPosition = window.innerWidth < 768 ? `${String((newTabPosition - 1) * 134)}px` : `${String((newTabPosition - 1) * 42)}px`;
+    setNewHighligterPositionString = window.innerWidth < 768 ? `translate-x-[${newHighlighterPosition}]` : `translate-y-[${newHighlighterPosition}]`
 
     setWorkplaceTransition("opacity-0");
 
     setTimeout(() => {
       setTabPosition(newTabPosition);
-      setHighlighterPosition(`translate-y-[${newHighlighterPosition}]`);
+      setHighlighterPosition(setNewHighligterPositionString);
       setWorkplaceTransition("opacity-100");
     }, 200);
   };
@@ -36,33 +30,20 @@ const Work = () => {
   return (
     <>
       <section id="work" className="work-section mt-10 mb-48 max-w-3xl mx-auto">
-        <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-silverGrey after:w-[300px] after:h-[1px] after:ml-8">
-          Where I've Worked
-        </h2>
+        <h2 className="flex justify-start items-center text-xl sm:text-xl lg:text-3xl font-medium relative section-header-line after:w-[14vw] sm:after:w-[38vw] lg:after:w-[300px]">Where I've Worked</h2>
 
-        <div className="work-section-container relative flex justify-start items-start mt-14 gap-x-10">
-          <div className="relative tabs flex flex-col justify-start h-full">
+        <div className="work-section-container relative flex justify-start items-start flex-col mt-5 md:flex-row md:mt-14 gap-x-10">
+          <div className="work-section-tabs scrollbar w-full overflow-x-auto relative tabs flex mb-8 md:mb-0 md:flex-col justify-start h-full">
             {workhistory.map((workplace) => {
               return (
-                <button
-                  data-tab={workplace.id}
-                  onClick={(e) => handleChangeTabs(e)}
-                  key={workplace.id}
-                  className={
-                    tabPosition == workplace.id ? selectedTab : unselectedTab
-                  }
-                >
+                <button data-tab={workplace.id} onClick={(e) => handleChangeTabs(e)} key={workplace.id} className={tabPosition == workplace.id ? selectedTab : unselectedTab}>
                   {workplace.companyName}
                 </button>
               );
             })}
-            <div
-              className={`highlight absolute top-0 left-0 z-10 w-[2px] h-11 rounded bg-accent transition-all duration-200  transform ${highligherPosition}`}
-            ></div>
+            <div className={`highlight absolute w-[8.5rem] h-[2px] top-[42px] md:top-0 md:left-0 z-10 md:w-[2px] md:h-11 rounded bg-accent transition-all duration-200  transform ${highligherPosition}`}></div>
           </div>
-          <div
-            className={`work-content relative transition-all duration-200 ease-in-out ${workplaceTransition}`}
-          >
+          <div className={`work-content relative transition-all duration-200 ease-in-out ${workplaceTransition}`}>
             {workhistory.map((workplace) => {
               return (
                 <WorkPlace

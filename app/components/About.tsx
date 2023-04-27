@@ -4,10 +4,10 @@ const About = () => {
   return (
     <>
       <section id="about" className="about-section mb-40">
-        <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-[#233554] after:w-[300px] after:h-[1px] after:ml-8">About Me</h2>
+        <h2 className="flex justify-start items-center font-medium text-xl md:text-2xl lg:text-3xl relative section-header-line">About Me</h2>
 
         <div className="text-secondary text-lg flex flex-col md:grid grid-cols-aboutGrid mt-8 gap-x-7">
-          <div className="flex flex-col gap-y-4">
+          <div className="about-me-copy-container flex flex-col gap-y-4 mb-8 text-sm md:text-base">
             <div>
               Hello! My name is Bryan, and I enjoy the creative and systematic process of bringing software to life. My interest in web development started when my friend introduced me to a web development Udemy course. It was a light-bulb moment
               that made me realize my passion for building and creating.
@@ -53,8 +53,10 @@ const About = () => {
               </li>
             </ul>
           </div>
-          <div className="portfolio-image">
-            <Img src={"/bryan_profile.jpeg"} alt={"Bryan's Profile Picture"} width={550} height={250} />
+          <div className="portfolio-image-container flex justify-center items-center w-full">
+            <div className="portfolio-image">
+              <Img src={"/bryan_profile.jpeg"} alt={"Bryan's Profile Picture"} width={550} height={250} />
+            </div>
           </div>
         </div>
       </section>
