@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <section id="projects" className="project-section">
-        <h2 className="flex justify-start items-center text-3xl font-medium relative after:content-[''] after:block after:relative after:bg-silverGrey after:w-[300px] after:h-[1px] after:ml-8">
+        <h2 className="flex justify-start items-center text-xl lg:text-3xl font-medium relative section-header-line after:w-[9vw] sm:after:w-[33vw] lg:after:w-[300px]">
           Some Things I've Built
         </h2>
 

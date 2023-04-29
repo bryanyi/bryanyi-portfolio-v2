@@ -30,7 +30,7 @@ const Work = () => {
   return (
     <>
       <section id="work" className="work-section mt-10 mb-48 max-w-3xl mx-auto">
-        <h2 className="flex justify-start items-center text-xl sm:text-xl lg:text-3xl font-medium relative section-header-line after:w-[14vw] sm:after:w-[38vw] lg:after:w-[300px]">Where I've Worked</h2>
+        <h2 className="flex justify-start items-center text-xl lg:text-3xl font-medium relative section-header-line after:w-[14vw] sm:after:w-[38vw] lg:after:w-[300px]">Where I've Worked</h2>
 
         <div className="work-section-container relative flex justify-start items-start flex-col mt-5 md:flex-row md:mt-14 gap-x-10">
           <div className="work-section-tabs scrollbar w-full overflow-x-auto relative tabs flex mb-8 md:mb-0 md:flex-col justify-start h-full">

@@ -13,7 +13,7 @@ const About = () => {
               that made me realize my passion for building and creating.
             </div>
             <div>
-              Today, I have the priveledge of building and maintaining web technologies at{" "}
+              Today, I have the privilege of building and maintaining web technologies at{" "}
               <a className="fun-underline" href="https://www.ridge.com">
                 The Ridge.
               </a>{" "}

@@ -1,57 +1,29 @@
 import { ProjectInfo } from "@/app/@types/interfaces";
-interface ProjectProps extends ProjectInfo { }
-const Project: React.FC<ProjectProps> = ({
-  projectId,
-  projectName,
-  technologies,
-  githubLink,
-  projectDescription,
-  projectImage,
-}) => {
-  const gridDescriptionLeft = "row-[1/2] col-[1_/_8]";
-  const gridImageRight = "row-[1/2] col-[7_/_13]";
-  const gridImageLeft = "row-[1/2] col-[1_/_7]";
-  const gridDescriptionRight = "row-[1/2] col-[6_/_13]";
-
-  const projectContainerStyles = `grid grid-cols-12`;
-  const projectTitleStyles = "text-accent text-xl mb-8 w-10/12";
-  const projectDescriptionStyles = "text-project p-4 rounded bg-secondaryBg";
-  const projectTechNameStyles = "font-spacemono mx-1 mt-8 text-project";
-  const projectLinksStyles = "mt-4";
-  const githubIconStyles = "text-2xl image-hover";
-
-  if (projectId % 2 === 0) {
+interface ProjectProps extends ProjectInfo {}
+const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage }) => {
+  if (projectId % 2 != 0) {
     return (
       <>
-        <div className={`project-container mt-32 ${projectContainerStyles}`}>
-          <div className={`project-image ${gridImageLeft}`}>
-            <a href={githubLink}>
-              <img
-                className="w-full h-full"
-                src={projectImage}
-                alt={projectName}
-              />
-            </a>
-          </div>
-          <div
-            className={`project-info text-right flex flex-col justify-start items-end ${gridDescriptionRight}`}
-          >
-            <div className={`project-title ${projectTitleStyles}`}>
-              {projectName}
-            </div>
-            <div className={`project-desc ${projectDescriptionStyles}`}>
-              {projectDescription}
-            </div>
-            <div className="project-tech flex justify-between gap-x-1 text-right">
+        <div className={`project-container`}>
+          <div className={`project-info-left`}>
+            <div className={`project-title-left`}>{projectName}</div>
+            <div className={`project-desc`}>{projectDescription}</div>
+            <div className="project-tech">
               {technologies.map((tech) => {
-                return <span className={projectTechNameStyles}>{tech}</span>;
+                return <span className="project-tech-name">{tech}</span>;
               })}
             </div>
-            <div className={`project-links ${projectLinksStyles}`}>
+            <div className={`project-links`}>
               <a href={githubLink} className="github-link">
-                <i className={`fab fa-github ${githubIconStyles}`}></i>
+                <i className={`fab fa-github github-icon`}></i>
               </a>
             </div>
+          </div>
+
+          <div className={`project-image-right`}>
+            <a href={githubLink}>
+              <img className="w-full h-full" src={projectImage} alt={projectName} />
+            </a>
           </div>
         </div>
       </>
@@ -59,36 +31,25 @@ const Project: React.FC<ProjectProps> = ({
   } else {
     return (
       <>
-        <div className={`project-container ${projectContainerStyles}`}>
-          <div
-            className={`project-info z-10 text-left flex flex-col justify-start items-start ${gridDescriptionLeft}`}
-          >
-            <div className={`project-title ${projectTitleStyles}`}>
-              {projectName}
-            </div>
-            <div className={`project-desc ${projectDescriptionStyles}`}>
-              {projectDescription}
-            </div>
-            <div className="project-tech flex justify-between gap-x-1">
+        <div className={`project-container`}>
+          <div className={`project-image-left`}>
+            <a href={githubLink}>
+              <img className="w-full h-full" src={projectImage} alt={projectName} />
+            </a>
+          </div>
+          <div className={`project-info-right`}>
+            <div className={`project-title-right`}>{projectName}</div>
+            <div className={`project-desc`}>{projectDescription}</div>
+            <div className="project-tech">
               {technologies.map((tech) => {
-                return <span className={projectTechNameStyles}>{tech}</span>;
+                return <span className="project-tech-name">{tech}</span>;
               })}
             </div>
-            <div className={`project-links ${projectLinksStyles}`}>
+            <div className={`project-links`}>
               <a href={githubLink} className="github-link">
-                <i className={`fab fa-github ${githubIconStyles}`}></i>
+                <i className={`fab fa-github github-icon`}></i>
               </a>
             </div>
-          </div>
-
-          <div className={`project-image ${gridImageRight}`}>
-            <a href={githubLink}>
-              <img
-                className="w-full h-full"
-                src={projectImage}
-                alt={projectName}
-              />
-            </a>
           </div>
         </div>
       </>

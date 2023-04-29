@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
           Design inspired by{" "}
           <a className="transition duration-150 hover:text-accent" href="https://github.com/bchiang7">
-            Brittany Chiange
+            Brittany Chiang
           </a>{" "}
         </div>
       </footer>

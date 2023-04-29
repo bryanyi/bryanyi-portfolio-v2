@@ -41,6 +41,62 @@
       height: 0px;
     }
   }
+
+  /* Project.tsx styles */
+  .project-container {
+    @apply grid grid-cols-12 mb-4 md:mb-40;
+  }
+  .project-title-right,
+  .project-title-left {
+    @apply text-accent text-center self-center text-base mb-4 
+    sm:text-lg 
+    md:text-base md:self-auto md:text-left md:mb-5 md:w-9/12
+    lg:mb-8 lg:text-xl lg:w-10/12;
+  }
+  .project-title-right {
+    @apply md:text-right;
+  }
+  .project-info-right,
+  .project-info-left {
+    @apply py-8 px-5 z-10 text-left flex flex-col justify-center items-start row-[1/2] col-[1_/_13]
+    sm:px-7
+    md:justify-center md:text-right md:py-0 md:px-0 md:items-end md:col-[5_/_13]
+    lg:col-[6_/_13];
+  }
+  .project-info-left {
+    @apply md:text-left md:items-start md:px-0 md:py-0 md:col-[1_/_9]
+    lg:col-[1_/_8];
+  }
+  .project-image-right,
+  .project-image-left {
+    @apply row-[1/2] col-[1_/_13] opacity-5 
+    sm:opacity-10 
+    md:opacity-10 md:col-[6_/_13]
+    lg:opacity-100 lg:col-[7_/_13];
+  }
+  .project-image-left {
+    @apply md:col-[1_/_8]
+    lg:col-[1_/_7];
+  }
+  .project-desc {
+    @apply text-sm text-project rounded mb-4 
+    md:bg-secondaryBg md:p-5
+    lg:mb-0 lg:p-4;
+  }
+  .project-tech {
+    @apply flex flex-wrap md:flex-nowrap md:justify-between gap-x-1;
+  }
+  .project-tech-name {
+    @apply text-xs flex-wrap font-spacemono text-project mr-2 
+    md:text-sm md:min-w-max
+    lg:mx-1 lg:mt-8;
+  }
+  .project-links {
+    @apply mt-4;
+  }
+  .github-icon {
+    @apply text-2xl image-hover;
+  }
 }
 
 .section-header-line {

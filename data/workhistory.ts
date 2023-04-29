@@ -41,7 +41,7 @@ const WorkHistory: WorkInfo[] = [
   },
 
   {
-    id: 2,
+    id: 4,
     companyName: "The Ridge 4",
     companyLink: "https://www.ridge.com",
     position: "Web Developer",
