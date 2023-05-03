@@ -9,14 +9,7 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: [
-    "translate-y-0",
-    "translate-y-[42px]",
-    "translate-y-[84px]",
-    "translate-y-[126px]",
-    "translate-x-[134px]",
-    "translate-x-[268px]",
-  ],
+  safelist: ["translate-y-0", "translate-y-[42px]", "translate-y-[84px]", "translate-y-[126px]", "translate-x-[134px]", "translate-x-[268px]"],
   theme: {
     extend: {
       colors: {
@@ -42,6 +35,9 @@ module.exports = {
       gridTemplateColumns: {
         aboutGrid: "3fr 2fr",
         technologiesGrid: "repeat(2, minmax(140px, 200px))",
+      },
+      transitionTimingFunction: {
+        slideSideBar: "cubic-bezier(0.645,0.045,0.355,1)",
       },
     },
   },

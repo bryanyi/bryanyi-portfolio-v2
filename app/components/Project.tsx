@@ -9,8 +9,12 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
             <div className={`project-title-left`}>{projectName}</div>
             <div className={`project-desc`}>{projectDescription}</div>
             <div className="project-tech">
-              {technologies.map((tech) => {
-                return <span className="project-tech-name">{tech}</span>;
+              {technologies.map((tech, idx) => {
+                return (
+                  <span key={idx} className="project-tech-name">
+                    {tech}
+                  </span>
+                );
               })}
             </div>
             <div className={`project-links`}>
@@ -41,8 +45,12 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
             <div className={`project-title-right`}>{projectName}</div>
             <div className={`project-desc`}>{projectDescription}</div>
             <div className="project-tech">
-              {technologies.map((tech) => {
-                return <span className="project-tech-name">{tech}</span>;
+              {technologies.map((tech, idx) => {
+                return (
+                  <span key={idx} className="project-tech-name">
+                    {tech}
+                  </span>
+                );
               })}
             </div>
             <div className={`project-links`}>
