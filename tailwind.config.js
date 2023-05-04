@@ -26,7 +26,7 @@ module.exports = {
       },
       fontFamily: {
         spacemono: ["Space Mono", "monospace"],
-        fontSans: ["Calibre", "Inter", "San Francisco", "SF Pro Text"],
+        fontSans: ["Calibre", "Fira Sans", "Open Sans", "Inter", "San Francisco", "SF Pro Text"],
       },
       boxShadow: {
         squish: "3px 3px 0 1px var(--primary-color)",
