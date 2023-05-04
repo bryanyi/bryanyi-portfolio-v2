@@ -1,5 +1,5 @@
 import { VscChevronRight } from "react-icons/vsc";
-import { WorkInfo } from "@/app/@types/interfaces";
+import { WorkInfo } from "@/@types/interfaces";
 
 interface WorkProps extends WorkInfo {
   tabPosition: number;

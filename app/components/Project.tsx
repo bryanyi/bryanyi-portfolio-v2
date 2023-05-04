@@ -1,4 +1,4 @@
-import { ProjectInfo } from "@/app/@types/interfaces";
+import { ProjectInfo } from "@/@types/interfaces";
 interface ProjectProps extends ProjectInfo {}
 const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage }) => {
   if (projectId % 2 != 0) {

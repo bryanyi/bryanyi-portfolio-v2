@@ -1,4 +1,4 @@
-import { WorkInfo } from "@/app/@types/interfaces";
+import { WorkInfo } from "@/@types/interfaces";
 
 const WorkHistory: WorkInfo[] = [
   {

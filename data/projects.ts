@@ -1,4 +1,4 @@
-import { ProjectInfo } from "@/app/@types/interfaces";
+import { ProjectInfo } from "@/@types/interfaces";
 const projects: ProjectInfo[] = [
   {
     projectId: 1,
