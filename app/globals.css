@@ -32,8 +32,15 @@
     user-select: none;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
+  .main-header {
+    @apply flex justify-between h-24 bg-[#0a192fd9] w-full px-6 font-spacemono text-sm fixed top-0 z-20 transition-all duration-100 ease-slideSideBar
+    sm:px-12;
+  }
+  .main-header.shade {
+    @apply shadow-[0_10px_30px_-10px_#020c1bb3];
+  }
   .menu-hamburger {
-    @apply cursor-pointer flex justify-center items-center h-6 md:hidden z-10;
+    @apply cursor-pointer flex justify-center items-center md:hidden z-40;
   }
   .menu-hamburger.active .hamburger_line {
     transform: translateX(-50px);
@@ -46,7 +53,7 @@
     transform: rotate(-45deg) translate(35px, 35px);
   }
   .sidebar-menu {
-    @apply z-[9] transition-all duration-300 delay-75 ease-slideSideBar fixed top-0 bottom-0 right-0 h-screen bg-secondaryBg translate-x-full w-[min(75vw,400px)] pt-20;
+    @apply z-30 transition-all duration-300 delay-75 ease-slideSideBar fixed top-0 bottom-0 right-0 h-screen bg-secondaryBg translate-x-full w-[min(75vw,400px)] pt-20;
   }
   .sidebar-menu.active {
     @apply translate-x-0;
@@ -133,8 +140,8 @@
 }
 
 .squishy-button {
-  @apply relative cursor-pointer text-primary py-[.7rem] px-[16px] border border-accent rounded 
-  bg-transparent text-base transition-all duration-150 shadow-squish top-0 left-0 hover:shadow-squished hover:top-[3px] hover:left-[3px]
+  @apply relative cursor-pointer text-primary py-[.5rem] px-[16px] border border-accent rounded 
+  bg-transparent text-sm transition-all duration-150 shadow-squish top-0 left-0 hover:shadow-squished hover:top-[3px] hover:left-[3px]
   md:py-[.9rem] md:px-[20px];
 }
 

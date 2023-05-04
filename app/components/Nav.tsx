@@ -1,8 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollLink from "../util/ScrollLink";
+import { NavLinks } from "@/data/navlinks";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [NavLinksArr, setNavLinksArr] = useState<any>([]);
+
+  useEffect(() => {
+    const headerEl = document.querySelector("header.main-header");
+    window.addEventListener("wheel", function (event) {
+      if (event.deltaY < 0 && this.window.pageYOffset <= 10) {
+        headerEl?.classList.remove("shade");
+      } else if (event.deltaY > 0 && this.window.pageYOffset > 95) {
+        headerEl?.classList.add("shade");
+      }
+    });
+
+    let newLinksArr: any[] = [];
+    for (let i = 0; i < NavLinks.length; i++) {
+      let navLink = NavLinks[i];
+      let el = document.querySelector(navLink.id);
+      let elTop = el?.getBoundingClientRect().top;
+      navLink["position"] = elTop ? elTop - 100 : 0;
+      newLinksArr.push(navLink);
+    }
+    setNavLinksArr(newLinksArr);
+  }, []);
 
   const hamburgerMenuHandler = () => {
     const menuHamburger = document.querySelector(".menu-hamburger");
@@ -25,22 +48,19 @@ const Nav = () => {
   };
   return (
     <>
-      <header className="flex justify-between h-full w-full px-6 sm:px-12 pt-10 font-spacemono text-sm">
+      <header className="main-header">
         <aside className="sidebar-menu">
           <nav className="sidebar-inner-container flex justify-center items-center h-full">
             <ul className="flex flex-col justify-center items-center gap-y-9 text-base">
-              <li onClick={() => hamburgerMenuHandler()}>
-                <ScrollLink href={"#about"}>About</ScrollLink>
-              </li>
-              <li onClick={() => hamburgerMenuHandler()}>
-                <ScrollLink href={"#work"}>Work</ScrollLink>
-              </li>
-              <li onClick={() => hamburgerMenuHandler()}>
-                <ScrollLink href={"#projects"}>Projects</ScrollLink>
-              </li>
-              <li onClick={() => hamburgerMenuHandler()}>
-                <ScrollLink href={"#contact"}>Contact me</ScrollLink>
-              </li>
+              {NavLinksArr.map((navLink: any, idx: number) => {
+                return (
+                  <li key={idx} onClick={() => hamburgerMenuHandler()}>
+                    <ScrollLink href={navLink.id} position={navLink.position}>
+                      {navLink.navTitle}
+                    </ScrollLink>
+                  </li>
+                );
+              })}
               <li>
                 <a className="cursor-pointer text-primary py-[.7rem] px-[16px] border border-accent rounded" href="/bryanyi_resume.pdf">
                   Resume
@@ -53,20 +73,17 @@ const Nav = () => {
           BY
         </a>
 
-        <ul className="hidden md:flex justify-around items-center list-none gap-x-14 font-thin">
+        <ul className="hidden text-sm justify-around items-center list-none gap-x-14 font-thin md:flex">
+          {NavLinksArr.map((navLink: any, idx: number) => {
+            return (
+              <li key={idx} className="list-hover">
+                <ScrollLink href={navLink.id} position={navLink.position}>
+                  {navLink.navTitle}
+                </ScrollLink>
+              </li>
+            );
+          })}
           <li className="list-hover">
-            <a href="#about">About</a>
-          </li>
-          <li className="list-hover">
-            <a href="#work">Work</a>
-          </li>
-          <li className="list-hover">
-            <a href="#projects">Projects</a>
-          </li>
-          <li className="list-hover">
-            <a href="#contact">Contact Me</a>
-          </li>
-          <li className="ml-2 list-hover">
             <a className="squishy-button" href="/bryanyi_resume.pdf">
               Resume
             </a>

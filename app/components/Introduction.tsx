@@ -2,7 +2,7 @@ const Introduction = () => {
   const introIconStyles = "image-hover text-2xl md:text-3xl lg:text-4xl"
   return (
     <>
-      <section id="introduction" className="flex flex-col h-screen text-left gap-y-3 sm:gap-y-5 mt-20 sm:mt-32 lg:mt-40">
+      <section id="introduction" className="flex flex-col h-auto min-h-screen text-left gap-y-3 sm:gap-y-5 mt-48 md:mt-40 sm:mt-32 lg:mt-40">
         <h1 className="font-spacemono text-accent font-thin pl-1 text-sm sm:pl-3 lg:text-lg">
           Hi, my name is
         </h1>

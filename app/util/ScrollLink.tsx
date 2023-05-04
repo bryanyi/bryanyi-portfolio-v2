@@ -5,14 +5,16 @@ import React, { PropsWithChildren } from "react";
 type AnchorProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>;
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
 // component definition
-const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
+const ScrollLink = ({ children, ...props }: any) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     //remove everything before the hash
-    const targetId = e.currentTarget.href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
+    // const targetId = e.currentTarget.href.replace(/.*\#/, "");
+    // const elem = document.getElementById(targetId);
+    console.log("props: ", props)
     window.scrollTo({
-      top: elem?.getBoundingClientRect().top,
+      // top: elem?.getBoundingClientRect().top,
+      top: props.position,
       behavior: "smooth",
     });
   };
