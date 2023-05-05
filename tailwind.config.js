@@ -25,8 +25,8 @@ module.exports = {
         silverGrey: "var(--silver-grey)",
       },
       fontFamily: {
-        spacemono: ["Space Mono", "monospace"],
-        fontSans: ["Calibre", "Fira Sans", "Open Sans", "Inter", "San Francisco", "SF Pro Text"],
+        spacemono: ["var(--font-spacemono)"],
+        fontSans: ["var(--font-firasans)"],
       },
       boxShadow: {
         squish: "3px 3px 0 1px var(--primary-color)",
