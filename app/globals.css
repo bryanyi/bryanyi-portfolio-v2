@@ -134,7 +134,7 @@
     @apply mt-4;
   }
   .github-icon {
-    @apply image-hover w-6 lg:w-7;
+    @apply image-hover w-6 h-7 lg:w-7 lg:h-7;
   }
 }
 

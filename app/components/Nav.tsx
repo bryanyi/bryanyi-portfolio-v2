@@ -28,6 +28,22 @@ const Nav = () => {
       newLinksArr.push(navLink);
     }
     setNavLinksArr(newLinksArr);
+
+    if (window.innerWidth < 768) {
+      document.addEventListener("click", function (e: any) {
+        if (e?.target?.matches(".sliderOpen")) {
+          const menuHamburger = document.querySelector(".menu-hamburger");
+          const sidebar = document.querySelector(".sidebar-menu");
+          const mainPageEl = document.querySelector(".main-page");
+          const bodyEl = document.querySelector("body");
+          menuHamburger?.classList.remove("active");
+          sidebar?.classList.remove("active");
+          mainPageEl?.classList.remove("blur");
+          bodyEl?.classList.remove("sliderOpen");
+          setIsMenuOpen(false);
+        }
+      });
+    }
   }, []);
 
   const hamburgerMenuHandler = () => {

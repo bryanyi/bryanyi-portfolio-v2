@@ -60,7 +60,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
               })}
             </div>
             <div className={`project-links`}>
-              <a href={githubLink} className="github-link">
+              <a href={githubLink} className="github-icon">
                 <FontAwesomeIcon className={"github-icon"} icon={faGithub} />
               </a>
             </div>

@@ -9,7 +9,7 @@ import { IntroAnimation, IntroAnimationItems } from "../util/animations";
 const Introduction = () => {
   return (
     <>
-      <motion.section variants={IntroAnimation} initial="hidden" animate="visible" id="introduction" className="flex flex-col h-auto min-h-screen text-left gap-y-3 sm:gap-y-5 mt-48 md:mt-40 sm:mt-32 lg:mt-40">
+      <motion.section variants={IntroAnimation} initial="hidden" animate="visible" id="introduction" className="flex flex-col items-start justify-center h-auto min-h-screen text-left gap-y-3 sm:gap-y-5">
         <motion.h1 variants={IntroAnimationItems} className="font-spacemono text-accent font-thin pl-1 text-sm sm:pl-1 lg:text-lg">
           Hi, my name is
         </motion.h1>
