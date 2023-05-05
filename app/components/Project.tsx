@@ -1,4 +1,8 @@
 import { ProjectInfo } from "@/@types/interfaces";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+library.add(faGithub);
 interface ProjectProps extends ProjectInfo {}
 const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage }) => {
   if (projectId % 2 != 0) {
@@ -19,7 +23,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
             </div>
             <div className={`project-links`}>
               <a href={githubLink} className="github-link">
-                <i className={`fab fa-github github-icon`}></i>
+                <FontAwesomeIcon className={"github-icon"} icon={faGithub} />
               </a>
             </div>
           </div>
@@ -55,7 +59,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
             </div>
             <div className={`project-links`}>
               <a href={githubLink} className="github-link">
-                <i className={`fab fa-github github-icon`}></i>
+                <FontAwesomeIcon className={"github-icon"} icon={faGithub} />
               </a>
             </div>
           </div>
