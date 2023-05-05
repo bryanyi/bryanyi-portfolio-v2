@@ -1,9 +1,13 @@
+"use client";
 import { VscChevronRight } from "react-icons/vsc";
 import Img from "next/image";
+import { motion } from "framer-motion";
+import { SectionAnimation } from "../util/animations";
+
 const About = () => {
   return (
     <>
-      <section id="about" className="about-section mb-40">
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={SectionAnimation} id="about" className="about-section mb-48">
         <h2 className="flex justify-start items-center font-medium text-xl md:text-2xl lg:text-3xl relative section-header-line">About Me</h2>
 
         <div className="text-secondary text-lg flex flex-col md:grid grid-cols-aboutGrid mt-8 gap-x-7">
@@ -59,7 +63,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

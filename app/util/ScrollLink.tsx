@@ -4,12 +4,12 @@ import React, { PropsWithChildren } from "react";
 // mirror the props of next/link component
 type AnchorProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>;
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
-// component definition
 const ScrollLink = ({ children, ...props }: any) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
+    let scrollPosition = props.position - 100;
     window.scrollTo({
-      top: props.position,
+      top: scrollPosition,
       behavior: "smooth",
     });
   };

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import workhistory from "../../data/workhistory";
 import WorkPlace from "./WorkPlace";
+import { motion } from "framer-motion";
+import { SectionAnimation } from "../util/animations";
 const Work = () => {
   const [tabPosition, setTabPosition] = useState<number>(1);
   const [workplaceTransition, setWorkplaceTransition] = useState<string>("opacity-100");
@@ -16,7 +18,7 @@ const Work = () => {
     let newHighlighterPosition: string = "";
     let setNewHighligterPositionString: string = "";
     newHighlighterPosition = window.innerWidth < 768 ? `${String((newTabPosition - 1) * 134)}px` : `${String((newTabPosition - 1) * 42)}px`;
-    setNewHighligterPositionString = window.innerWidth < 768 ? `translate-x-[${newHighlighterPosition}]` : `translate-y-[${newHighlighterPosition}]`
+    setNewHighligterPositionString = window.innerWidth < 768 ? `translate-x-[${newHighlighterPosition}]` : `translate-y-[${newHighlighterPosition}]`;
 
     setWorkplaceTransition("opacity-0");
 
@@ -29,7 +31,7 @@ const Work = () => {
 
   return (
     <>
-      <section id="work" className="work-section mt-10 mb-48 max-w-3xl mx-auto">
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={SectionAnimation} id="work" className="work-section mt-10 mb-52 max-w-3xl mx-auto">
         <h2 className="flex justify-start items-center text-xl lg:text-3xl font-medium relative section-header-line after:w-[14vw] sm:after:w-[38vw] lg:after:w-[300px]">Where I've Worked</h2>
 
         <div className="work-section-container relative flex justify-start items-start flex-col mt-5 md:flex-row md:mt-14 gap-x-10">
@@ -60,7 +62,7 @@ const Work = () => {
             })}
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

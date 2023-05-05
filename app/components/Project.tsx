@@ -3,12 +3,14 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 library.add(faGithub);
+import { motion } from "framer-motion";
+import { ProjectsAnimation } from "../util/animations";
 interface ProjectProps extends ProjectInfo {}
 const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage }) => {
   if (projectId % 2 != 0) {
     return (
       <>
-        <div className={`project-container`}>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={ProjectsAnimation} className={`project-container`}>
           <div className={`project-info-left`}>
             <div className={`project-title-left`}>{projectName}</div>
             <div className={`project-desc`}>{projectDescription}</div>
@@ -33,13 +35,13 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
               <img className="w-full h-full" src={projectImage} alt={projectName} />
             </a>
           </div>
-        </div>
+        </motion.div>
       </>
     );
   } else {
     return (
       <>
-        <div className={`project-container`}>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={ProjectsAnimation} className={`project-container`}>
           <div className={`project-image-left`}>
             <a href={githubLink}>
               <img className="w-full h-full" src={projectImage} alt={projectName} />
@@ -63,7 +65,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </>
     );
   }

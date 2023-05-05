@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react";
 import ScrollLink from "../util/ScrollLink";
 import { NavLinks } from "@/data/navlinks";
+import { motion } from "framer-motion";
+import { NavLinksAnimation } from "../util/animations";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [NavLinksArr, setNavLinksArr] = useState<any>([]);
+  const [NavLinksArr, setNavLinksArr] = useState<any>(NavLinks);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const headerEl = document.querySelector("header.main-header");
     window.addEventListener("wheel", function (event) {
       if (event.deltaY < 0 && this.window.pageYOffset <= 10) {
@@ -46,6 +49,7 @@ const Nav = () => {
       setIsMenuOpen(false);
     }
   };
+
   return (
     <>
       <header className="main-header">
@@ -69,30 +73,30 @@ const Nav = () => {
             </ul>
           </nav>
         </aside>
-        <a href="/" className="text-accent text-2xl flex justify-center items-center">
+        <motion.a initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ ease: "easeInOut", duration: 0.3 }} href="/" className="text-accent text-2xl flex justify-center items-center">
           BY
-        </a>
+        </motion.a>
 
         <ul className="hidden text-sm justify-around items-center list-none gap-x-14 font-thin md:flex">
           {NavLinksArr.map((navLink: any, idx: number) => {
             return (
-              <li key={idx} className="list-hover">
+              <motion.li custom={idx} initial="hidden" animate="visible" variants={NavLinksAnimation} key={idx} className="list-hover">
                 <ScrollLink href={navLink.id} position={navLink.position}>
                   {navLink.navTitle}
                 </ScrollLink>
-              </li>
+              </motion.li>
             );
           })}
-          <li className="list-hover">
+          <motion.li initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0, transition: { opacity: { delay: 0.8 }, y: { delay: 0.5 } } }} className="list-hover">
             <a className="squishy-button" href="/bryanyi_resume.pdf">
               Resume
             </a>
-          </li>
+          </motion.li>
         </ul>
 
-        <div className="menu-hamburger" onClick={() => hamburgerMenuHandler()}>
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ ease: "easeInOut", duration: 0.3 }} className="menu-hamburger" onClick={() => hamburgerMenuHandler()}>
           <div className="hamburger_line"></div>
-        </div>
+        </motion.div>
       </header>
     </>
   );
