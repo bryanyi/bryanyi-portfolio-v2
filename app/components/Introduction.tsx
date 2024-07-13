@@ -30,7 +30,7 @@ const Introduction = () => {
           <a className="fun-underline" href="https://www.medium.com/@bryanyi">
             writing blogs
           </a>{" "}
-          to give other self-taught engineers guidance that I wish I had.
+          to give other aspiring developers the guidance that I wish I had.
         </motion.p>
 
         <motion.div variants={IntroAnimationItems} className="flex gap-x-9 mt-2 text-sm lg:text-lg">

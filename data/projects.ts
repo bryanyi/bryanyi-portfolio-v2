@@ -2,20 +2,22 @@ import { ProjectInfo } from "@/@types/interfaces";
 const projects: ProjectInfo[] = [
   {
     projectId: 1,
-    projectName: "Strings and Tones Spring Boot Microservices",
-    technologies: ["Java", "Spring Boot", "API Gateway", "Eureka", "Docker"],
-    githubLink: "https://github.com/bryanyi/Strings-And-Tones",
-    projectDescription: "The goal of this project is to develop a working knowledge of building basic microservices using SpringBoot and Docker. This project is the backend of an eCommerce store that sells guitars and effects pedals, which is built with a microservice architecture.",
-    projectImage: "./stringsandtones.png",
+    projectName: "Microservice Architecture for E-Commerce Backend",
+    technologies: ["Java/Spring Boot", "Open Feign", "API Gateway", "Eureka", "Docker"],
+    githubLink: "https://github.com/bryanyi/siramiks-microservice-project-overview",
+    projectDescription: "This microservices project was developed to deepen my understanding of modern, distributed system architectures. By implementing a set of interconnected services, I aimed to explore the core principles of microservices, including service discovery, inter-service communication, and distributed tracing.",
+    projectImage: "./microservice_architecture_diagram.png",
+    projectSecondLink: "",
   },
 
   {
     projectId: 2,
-    projectName: "Custom Load Balancer in Go",
-    technologies: ["Go", "Docker"],
-    githubLink: "https://github.com/bryanyi/loadbalancer-go",
-    projectDescription: "After building a microservice backend with Spring Boot's API Gateway, I was interested about the inner workings of a loadbalancer. This project is a simple custom loadbalancer using the round-robin algorithm to cycle through 4 servers. Similarly to Spring's API Gateway, there's a YAML file to register the endpoints that will be used. This project also served to help get some practice using Go for the first time.",
-    projectImage: "./Custom-Loadbalancer.go.png",
+    projectName: "CLI YouTube Downloader",
+    technologies: ["Rust"],
+    githubLink: "https://github.com/bryanyi/cli-yt-downloader",
+    projectDescription: "A CLI app written in Rust and published on Crates.io that downloads whole YouTube videos or just the audio file of the video.",
+    projectImage: "./cli_app_cratesio.png",
+    projectSecondLink: "https://crates.io/crates/cli-yt-downloader",
   },
 ];
 

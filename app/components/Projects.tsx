@@ -21,6 +21,7 @@ const Projects = () => {
                 githubLink={project.githubLink}
                 projectDescription={project.projectDescription}
                 projectImage={project.projectImage}
+                projectSecondLink={project.projectSecondLink}
               />
             );
           })}
