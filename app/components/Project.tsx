@@ -6,7 +6,8 @@ library.add(faGithub);
 import { motion } from "framer-motion";
 import { ProjectsAnimation } from "../util/animations";
 interface ProjectProps extends ProjectInfo {}
-const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage }) => {
+const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies, githubLink, projectDescription, projectImage, projectSecondLink }) => {
+  let secondaryProjectLink = projectSecondLink === "" ? githubLink : projectSecondLink;
   if (projectId % 2 != 0) {
     return (
       <>
@@ -31,7 +32,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
           </div>
 
           <div className={`project-image-right`}>
-            <a href={githubLink}>
+            <a href={secondaryProjectLink}>
               <img className="w-full h-full" src={projectImage} alt={projectName} />
             </a>
           </div>
@@ -43,7 +44,7 @@ const Project: React.FC<ProjectProps> = ({ projectId, projectName, technologies,
       <>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={ProjectsAnimation} className={`project-container`}>
           <div className={`project-image-left`}>
-            <a href={githubLink}>
+            <a href={secondaryProjectLink}>
               <img className="w-full h-full" src={projectImage} alt={projectName} />
             </a>
           </div>

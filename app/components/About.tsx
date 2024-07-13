@@ -14,7 +14,7 @@ const About = () => {
           <div className="about-me-copy-container flex flex-col gap-y-4 mb-8 text-sm md:text-base">
             <div>
               Hello! My name is Bryan, and I enjoy the creative and systematic process of bringing software to life. My interest in web development started when my friend introduced me to a web development Udemy course. It was a light-bulb moment
-              that made me realize my passion for building and creating.
+              that helped me connect my passion for building and creating with a career.
             </div>
             <div>
               Today, I have the privilege of building and maintaining web technologies at{" "}
@@ -37,6 +37,10 @@ const About = () => {
               </li>
               <li className="flex gap-x-1 items-center text-accent">
                 <VscChevronRight />
+                <span className="text-secondary">Rust</span>
+              </li>
+              <li className="flex gap-x-1 items-center text-accent">
+                <VscChevronRight />
                 <span className="text-secondary">Go</span>
               </li>
               <li className="flex gap-x-1 items-center text-accent">
@@ -45,21 +49,17 @@ const About = () => {
               </li>
               <li className="flex gap-x-1 items-center text-accent">
                 <VscChevronRight />
-                <span className="text-secondary">Typescript</span>
+                <span className="text-secondary">SvelteKit</span>
               </li>
               <li className="flex gap-x-1 items-center text-accent">
                 <VscChevronRight />
-                <span className="text-secondary">Docker</span>
-              </li>
-              <li className="flex gap-x-1 items-center text-accent">
-                <VscChevronRight />
-                <span className="text-secondary">NodeJS</span>
+                <span className="text-secondary">NodeJS/Typescript</span>
               </li>
             </ul>
           </div>
           <div className="portfolio-image-container flex justify-center items-center w-full">
             <div className="portfolio-image">
-              <Img src={"/bryan_profile.jpeg"} alt={"Bryan's Profile Picture"} width={550} height={250} />
+              <Img src={"/me2.jpg"} alt={"Bryan's Profile Picture"} width={550} height={250} />
             </div>
           </div>
         </div>
