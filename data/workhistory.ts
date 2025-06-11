@@ -8,11 +8,10 @@ const WorkHistory: WorkInfo[] = [
     position: "Web Developer",
     timeEmployed: "July 2021 - Present",
     description: [
-      "Engineered Next.js/Typescript, TailwindCSS, and Builder.io to build faster landing pages that can be quickly iterated by the marketing and design teams while maintaining speed performance from over a second to 500ms.",
-      "Partnered closely with the design team to elevate the user experience, optimizing interface elements and mobile responsiveness through strategic SCSS adjustments and HTML restructuring, resulting in a 25% increase in mobile conversions and a 15% boost in overall customer satisfaction.",
-      "Developed CLI tool using Node.js and TypeScript to sync master repo with 7 child repositories, enabling efficient code sharing and deployment across international stores while providing granular control over file exclusions, merge strategies, and environment settings.",
-      "Collaborated closely with the art director to establish a streamlined design to development process, optimizing communication, reducing iteration cycles, and ensuring pixel-perfect implementation of design assets while maintaining code quality and maintainability."
-    ],
+      "Designed and optimized high-performance Node.js APIs handling 500+ daily requests, implementing caching and reducing redundant API calls by 50%, which decreased load times, improved frontend responsiveness, and enhanced user experience by speeding up data retrieval by 40%.",
+      "Optimized the data fetching and server-side rendering architecture for high-performance product pages using Next.js/TypeScript, decreasing critical page load times by 70% (1000ms to 300ms). This robust foundation enabled rapid content iteration, contributed to a 35% increase in user engagement, and drove a 5% improvement in conversion rates by ensuring optimal web performance.",
+      "Engineered a high-performance CLI synchronization tool using Node.js and TypeScript that managed code synchronization across 7 repositories, implementing advanced features like customizable file exclusions and intelligent merge strategies that reduced deployment time by 80%, eliminated 95% of conflicts, and saved the engineering team 3.5 hours weekly.",
+    ]
   },
 ];
 
